@@ -1,0 +1,84 @@
+// Make a form to collect X and Y co-ordinate and find out our point lies in which quadrant.
+There are special case like origin, X is zero or Y is zero /`/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> problem 5 </title>
+    <script>
+        function quadrant(x,y) 
+        {
+            var numobj = document.getElementById("x");
+            var x = numobj.value;
+            var y = document.getElementById("y").value;
+            x = parseInt(x);
+            y = parseInt(y);
+
+            var allValid = true;
+    
+            if (isNaN(x)) 
+            {
+                allValid = false;
+            }
+
+            if (isNaN(y)) 
+            {
+                allValid = false; 
+            }
+            var message = "";
+            if (allValid) 
+            {
+                if (x > 0 && y > 0) 
+                {
+                    message = " lies in first quadrant";
+                }
+                else if (x < 0 && y > 0) 
+                { 
+                    message = "lies in second quadrant";
+                } 
+                else if (x < 0 && y < 0) 
+                { 
+                    message = " lies in third quadrant";
+                }
+                else if (x > 0 && y < 0) 
+                { 
+                    message = " lies in fourth quadrant";
+                }
+                 else if (x == 0 && y > 0) 
+                { 
+                    message = "lies at positive y axis ";
+                }
+                 else if (x == 0 && y < 0)
+                { 
+                    message = " lies at negative y axis ";
+                }
+                 else 
+                { 
+                    message = "lies at origin";
+                }
+            } 
+            else 
+            {
+                message = "Please Enter Valid Number";
+            }
+            document.getElementById("message").innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="x">Enter x co-ordinate: </label>
+        <input type="text" name="x" id="x"><br><br>
+        <label for="y">Enter y co-ordinate: </label>
+        <input type="text" name="y" id="y"><br><br>
+        <input type="button" onclick="quadrant()" value="Find Quadrant" />
+    </form>
+    <h1 id="message"></h1>
+</body>
+
+</html>

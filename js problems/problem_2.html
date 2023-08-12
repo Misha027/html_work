@@ -1,0 +1,41 @@
+/* Make a form to collect principal, rate and year and calculate the simple interest.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> problem 2 </title>
+    <script>
+        function simpleinterest()
+    {
+        var x = document.getElementById("principal");
+        var principal = x.value;
+        var rate = document.getElementById("rate").value;
+        var time = document.getElementById("time").value;
+        principal = parseInt(principal);
+        rate = parseInt(rate);
+        time = parseInt(time);
+       
+      var simpleinterest = (principal*rate*time)/100;
+      console.log("simple interest : ",simpleinterest);
+      document.getElementById("message").innerHTML = "simple interest : " + simpleinterest;
+       
+    }
+     
+    </script>
+</head>
+<body>
+    <form>
+        <label for="principal">Enter principal: </label>
+        <input type="text" name="principal" id="principal"><br><br>
+        <label for="rate">Enter rate: </label>
+        <input type="text" name="rate" id="rate"><br><br>
+         <label for="time">Enter time: </label>
+         <input type="text" name="time" id="time"><br><br>
+        <input type="button" onclick="simpleinterest()" value=" simple interest" />
+    </form>
+    <h1 id="message"></h1>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> problem 7 </title>
+</head>
+<body>
+
+    <h1 id="head_1"></h1>
+    
+    Number 1: <input type="number"><br><br>
+    Number 2: <input type="number"><br><br>
+    Number 3: <input type="number"><br><br>
+    Number 4: <input type="number"><br><br>
+    Number 5: <input type="number"><br><br>
+    Number 6: <input type="number"><br><br>
+    Number 7: <input type="number"><br><br>
+    Number 8: <input type="number"><br><br>
+    Number 9: <input type="number"><br><br>
+    Number 10: <input type="number"><br><br>
+
+    <button onclick="largestNumber()">Click for result</button><br><br>
+
+    <script>
+        function largestNumber()
+        {
+            var maxNumber = 0
+            var all_inputs = document.getElementsByTagName('input');
+            console.log(all_inputs)
+            for (let i = 0 ; i < all_inputs.length ; i++){
+                if(all_inputs[i].value > maxNumber){  
+                    maxNumber = all_inputs[i].value
+                }
+            }
+            document.getElementById('head_1').innerHTML = 'Largest number is:' + maxNumber;
+        }
+
+    </script>
+</body>
+</html>

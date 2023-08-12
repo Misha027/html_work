@@ -1,12 +1,15 @@
+/* Make a form to collect ten number and calculate their sum */
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> problem 1 </title>
     <script>
-        function calculateSum(){
+        function calculateSum()
+        {
             var x = document.getElementById("num1");
             var num1 = x.value;
             var num2 = document.getElementById("num2").value;
@@ -81,7 +84,9 @@
                 var sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10;
                 console.log("Sum of Given Number: ",sum);
                 document.getElementById("message").innerHTML = "Sum of Given Number: " + sum;
-            }else{
+            }
+            else
+            {
                 document.getElementById("message").innerHTML = "Please Enter Valid Number";
             }
 
